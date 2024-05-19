@@ -20,18 +20,5 @@ def run():
         df_fp.to_excel(writer, sheet_name="Fixed Point", index=False)
         df_nr.to_excel(writer, sheet_name="Newton-Raphson", index=False)
 
-#grafica de la convergencia de la función
-
-    def h(x):
-        return ((1*10**6-(1*10**5)*x)/(250000))**2
-    x_values = np.array(value_fp)
-    y_values = np.array([h(x_val) for x_val in x_values])
-
-    fig, ax = plt.subplots()
-    ax.scatter(x=x_values,y=y_values)
-    plt.plot(4.6241,4.6241, marker="o",color="red")
-    plt.show()
-
-
 if __name__=="__main__":
     run()
